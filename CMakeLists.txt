@@ -18,6 +18,8 @@ FetchContent_MakeAvailable(googletest)
 add_executable(runTests tests.cpp)
 
 target_link_libraries(runTests gtest_main)
+target_compile_options(gtest PRIVATE -Wno-error=maybe-uninitialized)
 
 include(GoogleTest)
 gtest_discover_tests(runTests)
+
