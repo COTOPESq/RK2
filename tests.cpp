@@ -2,44 +2,30 @@
 #include <memory>
 #include "ConceptualExample.cpp"
 
-using namespace ConceptualExample;
+using namespace ConceptualExample::Motivation01;
 
-TEST(Motivation01Test, CowSee) {
-    Motivation01::Cow cow;
-    EXPECT_EQ(cow.see(), "cow");
-}
-
-TEST(Motivation01Test, CowSay) {
-    Motivation01::Cow cow;
-    EXPECT_EQ(cow.say(), "moo");
-}
-
-TEST(Motivation01Test, PigSee) {
-    Motivation01::Pig pig;
-    EXPECT_EQ(pig.see(), "pig");
-}
-
-TEST(Motivation01Test, PigSay) {
-    Motivation01::Pig pig;
-    EXPECT_EQ(pig.say(), "oink");
-}
-
-TEST(Motivation01Test, DogSee) {
-    Motivation01::Dog dog;
-    EXPECT_EQ(dog.see(), "dog");
-}
-
-TEST(Motivation01Test, DogSay) {
-    Motivation01::Dog dog;
-    EXPECT_EQ(dog.say(), "woof");
-}
-
-TEST(Motivation01Test, SeeAndSay) {
-    std::shared_ptr<Motivation01::IAnimal> animal = std::make_shared<Motivation01::Cow>();
+TEST(Motivation01Test, CowSeeAndSay) {
+    std::shared_ptr<IAnimal> cow = std::make_shared<Cow>();
     testing::internal::CaptureStdout();
-    Motivation01::seeAndSay(animal);
+    seeAndSay(cow);
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "The cow says 'moo' :).\n");
+}
+
+TEST(Motivation01Test, PigSeeAndSay) {
+    std::shared_ptr<IAnimal> pig = std::make_shared<Pig>();
+    testing::internal::CaptureStdout();
+    seeAndSay(pig);
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_EQ(output, "The pig says 'oink' :).\n");
+}
+
+TEST(Motivation01Test, DogSeeAndSay) {
+    std::shared_ptr<IAnimal> dog = std::make_shared<Dog>();
+    testing::internal::CaptureStdout();
+    seeAndSay(dog);
+    std::string output = testing::internal::GetCapturedStdout();
+    EXPECT_EQ(output, "The dog says 'woof' :).\n");
 }
 
 int main(int argc, char **argv) {
