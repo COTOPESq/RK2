@@ -4,7 +4,6 @@
 
 using namespace ConceptualExample;
 
-// Тесты для класса Cow
 TEST(Motivation01Test, CowSee) {
     Cow cow;
     EXPECT_EQ(cow.see(), "cow");
@@ -15,7 +14,6 @@ TEST(Motivation01Test, CowSay) {
     EXPECT_EQ(cow.say(), "moo");
 }
 
-// Тесты для класса Pig
 TEST(Motivation01Test, PigSee) {
     Pig pig;
     EXPECT_EQ(pig.see(), "pig");
@@ -26,7 +24,6 @@ TEST(Motivation01Test, PigSay) {
     EXPECT_EQ(pig.say(), "oink");
 }
 
-// Тесты для класса Dog
 TEST(Motivation01Test, DogSee) {
     Dog dog;
     EXPECT_EQ(dog.see(), "dog");
@@ -37,7 +34,6 @@ TEST(Motivation01Test, DogSay) {
     EXPECT_EQ(dog.say(), "woof");
 }
 
-// Тест для функции seeAndSay
 TEST(Motivation01Test, SeeAndSay) {
     std::shared_ptr<IAnimal> animal = std::make_shared<Cow>();
     testing::internal::CaptureStdout();
