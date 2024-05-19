@@ -5,39 +5,39 @@
 using namespace ConceptualExample;
 
 TEST(Motivation01Test, CowSee) {
-    Cow cow;
+    Motivation01::Cow cow;
     EXPECT_EQ(cow.see(), "cow");
 }
 
 TEST(Motivation01Test, CowSay) {
-    Cow cow;
+    Motivation01::Cow cow;
     EXPECT_EQ(cow.say(), "moo");
 }
 
 TEST(Motivation01Test, PigSee) {
-    Pig pig;
+    Motivation01::Pig pig;
     EXPECT_EQ(pig.see(), "pig");
 }
 
 TEST(Motivation01Test, PigSay) {
-    Pig pig;
+    Motivation01::Pig pig;
     EXPECT_EQ(pig.say(), "oink");
 }
 
 TEST(Motivation01Test, DogSee) {
-    Dog dog;
+    Motivation01::Dog dog;
     EXPECT_EQ(dog.see(), "dog");
 }
 
 TEST(Motivation01Test, DogSay) {
-    Dog dog;
+    Motivation01::Dog dog;
     EXPECT_EQ(dog.say(), "woof");
 }
 
 TEST(Motivation01Test, SeeAndSay) {
-    std::shared_ptr<IAnimal> animal = std::make_shared<Cow>();
+    std::shared_ptr<Motivation01::IAnimal> animal = std::make_shared<Motivation01::Cow>();
     testing::internal::CaptureStdout();
-    seeAndSay(animal);
+    Motivation01::seeAndSay(animal);
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "The cow says 'moo' :).\n");
 }
