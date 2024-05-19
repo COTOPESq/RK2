@@ -22,3 +22,10 @@ target_link_libraries(runTests gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(runTests)
+
+set(EXECUTABLE_ARTIFACT "${CMAKE_BINARY_DIR}/ConceptualExample")
+
+add_custom_command(
+    TARGET ConceptualExample
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
