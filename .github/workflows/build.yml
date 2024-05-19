@@ -1,4 +1,4 @@
-name: Build
+name: Build and Test
 
 on:
   push:
@@ -31,3 +31,6 @@ jobs:
 
     - name: Build
       run: cmake --build build
+
+    - name: Run tests
+      run: ctest --output-on-failure -C Debug -T test --test-dir build
