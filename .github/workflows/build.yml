@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build, Test, and Verify
 
 on:
   push:
@@ -33,10 +33,24 @@ jobs:
       run: cmake --build build
 
     - name: Run tests
-      run: ctest --output-on-failure -C Debug -T test --test-dir build
+      run: |
+        cd build
+        ctest --output-on-failure -C Debug -T test
 
-    - name: Upload artifact
+    - name: Verify main executable
+      run: |
+        cd build
+        ./ConceptualExample
+
+    - name: Verify test executable
+      run: |
+        cd build
+        ./runTests
+
+    - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: ConceptualExampleExecutable
-        path: build/ConceptualExample
+        name: Executables
+        path: |
+          build/ConceptualExample
+          build/runTests
