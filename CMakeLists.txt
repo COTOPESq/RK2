@@ -29,3 +29,7 @@ add_custom_command(
     TARGET ConceptualExample
     POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    $<TARGET_FILE:ConceptualExample>
+    ${EXECUTABLE_ARTIFACT}
+    COMMENT "Copying executable to artifacts directory"
+)
