@@ -1,3 +1,0 @@
-/home/user/RK2/build/CMakeFiles/ConceptualExample.dir
-/home/user/RK2/build/CMakeFiles/edit_cache.dir
-/home/user/RK2/build/CMakeFiles/rebuild_cache.dir
