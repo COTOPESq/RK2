@@ -1,0 +1,7 @@
+add_test( Motivation01Test.CowSeeAndSay /home/user/RK2/build/runTests [==[--gtest_filter=Motivation01Test.CowSeeAndSay]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Motivation01Test.CowSeeAndSay PROPERTIES WORKING_DIRECTORY /home/user/RK2/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test( Motivation01Test.PigSeeAndSay /home/user/RK2/build/runTests [==[--gtest_filter=Motivation01Test.PigSeeAndSay]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Motivation01Test.PigSeeAndSay PROPERTIES WORKING_DIRECTORY /home/user/RK2/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test( Motivation01Test.DogSeeAndSay /home/user/RK2/build/runTests [==[--gtest_filter=Motivation01Test.DogSeeAndSay]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Motivation01Test.DogSeeAndSay PROPERTIES WORKING_DIRECTORY /home/user/RK2/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set( runTests_TESTS Motivation01Test.CowSeeAndSay Motivation01Test.PigSeeAndSay Motivation01Test.DogSeeAndSay)
