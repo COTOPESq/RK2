@@ -20,11 +20,14 @@ jobs:
       uses: jwlawson/actions-setup-cmake@v1
 
     - name: Create build directory
-      run: mkdir build
+      run: |
+        if [ -d build ]; then
+          rm -rf build
+        fi
+        mkdir build
 
     - name: Configure CMake
       run: cmake -S . -B build
 
     - name: Build
       run: cmake --build build
-
